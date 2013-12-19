@@ -1,0 +1,17 @@
+---
+# File: main.yml
+# Main tasks for the centos features of the couchbase-server role
+
+# Configure iptables, install Couchbase Server
+
+- name: Configure iptables
+  template: src=iptables.j2 dest=/etc/sysconfig/iptables.couchbase-server owner=root group=root
+  notify:
+  - lokkit
+  when: firewall is defined
+
+- name: Download Couchbase Server
+  get_url: url={{ centos.url }} dest=/tmp/{{ centos.package }} sha256sum={{ centos.sha256 }}
+
+- name: Install Couchbase Server
+  yum: name=/tmp/{{ centos.package }}

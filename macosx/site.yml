@@ -1,0 +1,6 @@
+---
+# File: site.yml
+# Ansible playbook to install and initialize a Couchbase Server cluster
+
+- include: cluster_install.yml
+- include: cluster_init.yml

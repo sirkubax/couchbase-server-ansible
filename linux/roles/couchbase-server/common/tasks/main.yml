@@ -1,0 +1,6 @@
+---
+# File: main.yml
+# Main tasks for the common features of the Couchbase Server role
+
+- name: start Couchbase Server
+  service: name=couchbase-server state=started

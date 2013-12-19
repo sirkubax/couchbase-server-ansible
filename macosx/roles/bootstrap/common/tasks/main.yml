@@ -1,0 +1,25 @@
+---
+# File: main.yml
+# Main tasks for the common features of the bootstrap role
+
+# create operating system groups: Creates distribution specific user groups
+# update pam configuration: updates PAM user limits to raise the number of
+# open file descriptors for root and couchbase user to 65336
+# mount data volumes: Mounts the Couchbase Server data volumes with the
+# following extra options: noatime, barrier=0, and errors=remount-ro.
+
+- name: Set hostname
+  hostname: name={{ inventory_hostname }}
+
+- name: Define local settings
+  template: src=etc_rc.local.j2 dest=/etc/rc.local owner=root group=root mode=0755
+  notify: source locals
+
+- name: Mount data volume
+  mount: name={{ data_storage.mountpoint }} src={{ data_storage.partition }} opts="noatime,barrier=0,errors=remount-ro" fstype=ext4 state=mounted
+
+- name: Mount index volume
+  mount: name={{ index_storage.mountpoint }} src={{ index_storage.partition }} opts="noatime,barrier=0,errors=remount-ro" fstype=ext4 state=mounted
+
+- name: Update PAM configuration
+  copy: src=etc_security_limits.d_couchbase-server.conf dest=/etc/security/limits.d/couchbase-server.conf owner=root group=root mode=0644

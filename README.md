@@ -1,0 +1,35 @@
+# Couchbase Server Ansible Orchestration
+
+
+               .CCCCC                       CCCCC.
+              .CCCCCC                       CCCCCC.
+              .CCCCCC                       CCCCCC.
+              .CCCCCC                       CCCCCC.
+              .CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC.
+              .CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC.
+              .CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC.
+               .CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC.
+
+
+[Couchbase Server](http://www.couchbase.com/couchbase-server/overview) is a
+high performance NoSQL document database available in Community and Enterprise
+editions for several operating system environments.
+
+This project provides documentation and a collection of scripts to help you
+automate the deployment of Couchbase Server Enterprise Edition using the
+[Ansible](http://www.ansibleworks.com/) orchestration engine on Linux and
+for Mac OS X with Vagrant managed VirtualBox environments.
+
+This project is comprised of 2 distinct subprojects structured as follows:
+
+* **linux**: Ansible project and documentation for Linux
+* **macosx**: Ansible project and documentation for Mac OS X with Vagrant
+
+## Thank You
+
+Without the following people, this project would not have been possible, so
+a big thank you to:
+
+* Tugdual Grall for his excellent [Create a Couchbase Cluster with Ansible](http://blog.couchbase.com/create-couchbase-cluster-with-ansible)
+blog post, which served as inspiration for this project
+* Brent Woodruff for providing several helpful tips

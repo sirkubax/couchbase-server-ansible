@@ -1,0 +1,18 @@
+# File: ubuntu
+# Couchbase Server cluster node hosts configuration for Ubuntu nodes
+#
+# NB: Replace the hosts below with your actual node hostnames and continue
+#     the 'node_role' pattern for additional nodes past 'fourth_node'
+#
+
+[ubuntu]
+node1.local
+node2.local
+node3.local
+node4.local
+
+[cluster_nodes]
+node1.local node_role=primary
+node2.local node_role=additional
+node3.local node_role=additional
+node4.local node_role=additional

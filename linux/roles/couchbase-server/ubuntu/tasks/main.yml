@@ -1,0 +1,11 @@
+---
+# File: main.yml
+# Main tasks for the Ubuntu features of the couchbase-server role
+
+# Install Couchbase Server
+
+- name: Download Couchbase Server
+  get_url: url={{ ubuntu.url }} dest=/tmp/{{ ubuntu.package }} sha256sum={{ ubuntu.sha256 }}
+
+- name: Install Couchbase Server
+  command: dpkg -i /tmp/{{ ubuntu.package }}

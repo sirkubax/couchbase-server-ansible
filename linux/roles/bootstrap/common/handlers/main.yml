@@ -1,0 +1,12 @@
+---
+# File: main.yml
+# Main handlers for the common features of the bootstrap role
+
+# configure sysctl: configuration sysctl with our specific tuning
+# source locals: loads local settings in /etc/rc.local
+
+- name: configure sysctl
+  command: sysctl -e -p /etc/sysctl.d/couchbase-server.conf
+
+- name: source locals
+  command: /bin/bash /etc/rc.local
