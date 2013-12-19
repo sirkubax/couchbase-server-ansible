@@ -58,9 +58,9 @@ Begin from the top level directory of this project and use the following
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads), [Vagrant](http://downloads.vagrantup.com/), [vagrant-hosts](https://github.com/adrienthebo/vagrant-hosts), and [Ansible](http://www.ansibleworks.com/docs/intro_installation.html#latest-releases-via-pip).
 2. Edit `/etc/hosts` or use the included `bin/preinstall` script to add
    the following entries:
-      10.1.42.10 node1.local node1
-      10.1.42.20 node2.local node2
-      10.1.42.30 node3.local node3
+ * 10.1.42.10 node1.local node1
+ * 10.1.42.20 node2.local node2
+ * 10.1.42.30 node3.local node3
 3. `cd macosx`
 4. `vagrant up`
 5. Access the cluster at http://node1:8091 with username **Administrator**
@@ -209,11 +209,6 @@ cluster.
   * `roles/bootstrap/common/templates/iptables.j2`
   * `roles/couchbase-server/centos/templates/iptables.j2`
   * `roles/couchbase-server/ubuntu/templates/iptables.j2`
-4. This project includes the Vagrant insecure private SSH key located at
-   `keys/vagrant` due to a limitation on specifying private keys relative to
-   the user's home directory; once this is working in Ansible, this key will
-   be dropped from the project in favor of the one installed by Vagrat at
-   `~/.vagrant.d/insecure_private_key`.
 
 ## References
 
