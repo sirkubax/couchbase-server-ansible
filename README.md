@@ -1,4 +1,4 @@
-# Couchbase Server Ansible Orchestration
+# Couchbase Server with Ansible
 
 
                .CCCCC                       CCCCC.
@@ -20,10 +20,36 @@ automate the deployment of Couchbase Server Enterprise Edition using the
 [Ansible](http://www.ansibleworks.com/) orchestration engine on Linux and
 for Mac OS X with Vagrant managed VirtualBox environments.
 
-This project is comprised of 2 distinct subprojects structured as follows:
+This project is comprised of 2 distinct sub-projects structured as follows:
 
 * **linux**: Ansible project and documentation for Linux
+ * group_vars: Global variables for the project
+ * library: The couchbase-server Ansible module
+ * roles: The *bootstrap* role for operating system configuration and the
+   *couchbase-server* role for cluster installation and initialization
+ * centos: Hosts inventory file for CentOS based clusters
+ * cluster_init.yml: Ansible playbook for initializing a Couchbase Server
+   cluster
+ * cluster_install.yml: Ansible playbook for configuring operating system,
+   and installing Couchbase Server
+ * create_bucket.yml: Ansible playbook for creating a Couchbase Server bucket
+ * site.yml: Top level Ansible playbook for Linux nodes
+ * ubuntu: Hosts inventory file for CentOS based clusters
 * **macosx**: Ansible project and documentation for Mac OS X with Vagrant
+  * bin: Contains convenience script for Vagrant host preparation
+  * group_vars: Global variables for the project
+  * library: The couchbase-server Ansible module
+  * roles: The *bootstrap* role for operating system configuration and the
+    *couchbase-server* role for cluster installation and initialization
+  * centos: Hosts inventory file for CentOS based clusters
+  * cluster_init.yml: Ansible playbook for initializing a Couchbase Server
+    cluster
+  * cluster_install.yml: Ansible playbook for configuring operating system,
+    and installing Couchbase Server
+  * create_bucket.yml: Ansible playbook for creating a Couchbase Server bucket
+  * site.yml: Top level Ansible playbook for Linux nodes
+  * ubuntu: Hosts inventory file for CentOS based clusters
+  * Vagrantfile: The Vagrant configuration file
 
 ## Thank You
 

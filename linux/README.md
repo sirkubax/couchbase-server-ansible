@@ -1,4 +1,4 @@
-# Couchbase Server Ansible Orchestration
+# Couchbase Server with Ansible
 
 
 
@@ -42,14 +42,15 @@ Server, and initialize the nodes into a ready to use cluster.
    This  computer must have SSH access to the cluster nodes.
 2. Define the cluster node hosts in either `hosts_centos` or `hosts_ubuntu`
    depending on which OS you will use.
-3. Specify the Couchbase Server version (`version`) and SHA-256 checksum
-   (`sha256`) of the package file in the `group_vars/all` file.
+3. Specify the Couchbase Server version (`version`) package file name
+   (`package`), URL (`url`), and SHA-256 checksum (`sha256`) of the package
+   file in the `group_vars/all` file.
 4. Define cluster node parameters, such as the cluster RAM quota
    (`server_ram`), data and index storage paths (`data_path`, `index_path`),
-   physical disk information (`data_storage`, `index_storage`), and network
-   interface (`network`).
+   physical disk information (`data_storage`, `index_storage`), network
+   interface (`network`), and whether to enable OS firewall (`firewall`).
 5. Execute the top level Ansible playbook:
-   `ansible-playbook -i centos site.yml
+   `ansible-playbook -i centos site.yml`
    (replace *centos* with *ubuntu* if you're using Ubuntu based nodes)
 
 ## Detailed Guide
