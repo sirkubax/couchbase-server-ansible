@@ -1,6 +1,7 @@
 ---
-# File: main.yml
+# File: linux/roles/couchbase-server/common/main.yml
 # Main handlers for the common features of the Couchbase Server role
 
 - name: Restart Couchbase Server
   service: name=couchbase-server state=restarted
+

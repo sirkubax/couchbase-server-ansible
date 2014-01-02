@@ -1,5 +1,5 @@
 ---
-# File: cluster_init.yml
+# File: linux/cluster_init.yml
 # Ansible playbook to initialize a new Couchbase Server cluster
 
 - hosts: cluster_nodes

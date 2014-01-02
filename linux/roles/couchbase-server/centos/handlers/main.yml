@@ -1,6 +1,7 @@
 ---
-# File: main.yml
-# Main handlers for the centos features of the couchbase-server role
+# File: linux/roles/couchbase-server/centos/handlers/main.yml
+# Handlers for the CentOS features of the Couchbase Server role
 
 - name: lokkit
   command: lokkit --custom-rules /etc/sysconfig/iptables.couchbase-server --update
+

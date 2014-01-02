@@ -1,0 +1,4 @@
+---
+# File: linux/roles/couchbase-server/common/vars/main.yml
+# Common variables for the Couchbase Server role
+

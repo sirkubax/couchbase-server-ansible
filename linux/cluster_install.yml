@@ -1,5 +1,5 @@
 ---
-# File: cluster_install.yml
+# File: linux/cluster_install.yml
 # Ansible playbook to configure operating system and install Couchbase Server
 
 - hosts: centos

@@ -1,11 +1,10 @@
 ---
-# File: all
-# Global variables for Couchbase Server installation
+# File: linux/group_vars/all
+# Global group variables for Couchbase Server installation
 
 #############################################################################
-# Couchbase Server specific configuration
+# Couchbase Server configuration items (in here for now so playbooks can use)
 #
-# version: The Couchbase Server version
 # admin_port: Administration and web console port
 # api_port: Couchbase Server API port
 # internal_ports: Memcached and client ports
@@ -20,26 +19,10 @@ couchbase_server:
   api_port: 8092
   internal_ports: 11209:11211
   node_data_ports: 21100:21299
-  # NB: Change this to a reasonable server ram quota
+  # NB: Change this to a reasonable server ram quota for your configuration
   server_ram: 3511
   data_path: /opt/couchbase/var/lib/couchbase/data
   index_path: /opt/couchbase/var/lib/couchbase/data
-
-# Change Couchbase Server version, package, url & SHA 256 checksums as needed
-
-# Couchbase Server Enterprise Edition version 2.2.0 on CentOS
-centos:
-  version: 2.2.0
-  package: couchbase-server-enterprise_2.2.0_x86_64.rpm
-  url: http://packages.couchbase.com/releases/2.2.0/couchbase-server-enterprise_2.2.0_x86_64.rpm
-  sha256: 0ce1f9858a3509362a4f7297089c1e18b31056fb3b95f2eea702c2891aa1bc1a
-
-# Couchbase Server Enterprise Edition version 2.2.0 on Ubuntu
-ubuntu:
-  version: 2.2.0
-  package: couchbase-server-enterprise_2.2.0_x86_64.deb
-  url: http://packages.couchbase.com/releases/2.2.0/couchbase-server-enterprise_2.2.0_x86_64.deb
-  sha256: 9b9f066cf45609a17ff71964feacbb3fd9d4c43208b2a823251fe6b1e6573fcd
 
 #############################################################################
 # Operating system configuration

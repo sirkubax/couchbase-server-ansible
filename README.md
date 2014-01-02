@@ -59,3 +59,4 @@ a big thank you to:
 * Tugdual Grall for his excellent [Create a Couchbase Cluster with Ansible](http://blog.couchbase.com/create-couchbase-cluster-with-ansible)
 blog post, which served as inspiration for this project
 * Brent Woodruff for providing several helpful tips
+

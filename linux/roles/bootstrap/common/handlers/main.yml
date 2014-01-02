@@ -1,5 +1,5 @@
 ---
-# File: main.yml
+# File: linux/roles/bootstrap/common/handlers/main.yml
 # Main handlers for the common features of the bootstrap role
 
 # configure sysctl: configuration sysctl with our specific tuning
@@ -10,3 +10,4 @@
 
 - name: source locals
   command: /bin/bash /etc/rc.local
+

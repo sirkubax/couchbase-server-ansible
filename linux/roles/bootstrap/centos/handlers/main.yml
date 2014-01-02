@@ -1,6 +1,7 @@
 ---
-# File: main.yml
-# Main handlers for the centos features of the bootstrap role
+# File: linux/roles/bootstrap/handlers/main.yml
+# Handlers for the CentOS features of the bootstrap role
 
 - name: restart iptables
   service: name=iptables state=restarted
+

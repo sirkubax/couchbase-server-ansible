@@ -1,7 +1,7 @@
 ---
-# File: main.yml
+# File: linux/roles/bootstrap/common/tasks/main.yml
 # Main tasks for the common features of the bootstrap role
-
+#
 # create operating system groups: Creates distribution specific user groups
 # update pam configuration: updates PAM user limits to raise the number of
 # open file descriptors for root and couchbase user to 65336

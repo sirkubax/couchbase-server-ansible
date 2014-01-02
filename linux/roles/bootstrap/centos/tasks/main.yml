@@ -1,6 +1,7 @@
 ---
-# File: main.yml
-# Main tasks for the centos features of the bootstrap role
+# File: linux/roles/bootstrap/centos/tasks/main.yml
+# Main tasks for the CentOS features of the bootstrap role
 
 - name: Install libselinux-python
   yum: name=libselinux-python state=latest
+
