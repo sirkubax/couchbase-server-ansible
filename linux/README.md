@@ -38,17 +38,21 @@ Server, and initialize the nodes into a ready to use cluster.
 
 ## Quick Start
 
-1. Install [Ansible](http://www.ansibleworks.com/docs/intro_installation.html) on the system you'll use to orchestrate Couchbase Sever cluster deployment.
+1. Install [Ansible](http://www.ansibleworks.com/docs/intro_installation.html) on the
+   system you'll use to orchestrate Couchbase Sever cluster deployment.
    This  computer must have SSH access to the cluster nodes.
-2. Define the cluster node hosts in either `hosts_centos` or `hosts_ubuntu`
+2. Define the cluster node hosts in either the `centos` or `ubuntu` file 
    depending on which OS you will use.
-3. Specify the Couchbase Server version (`version`) package file name
-   (`package`), URL (`url`), and SHA-256 checksum (`sha256`) of the package
-   file in the `group_vars/all` file.
+3. By default, the project will install the latest version of 
+   Couchbase Server  Enterprise Edition for the OS you choose. If you wish to
+   install a previous version, simply uncomment the version's entry in the
+   `linux/roles/couchbase-server/centos/vars/main.yml` for CentOS or
+   `linux/roles/couchbase-server/centos/vars/main.yml` for Ubuntu.
 4. Define cluster node parameters, such as the cluster RAM quota
    (`server_ram`), data and index storage paths (`data_path`, `index_path`),
    physical disk information (`data_storage`, `index_storage`), network
-   interface (`network`), and whether to enable OS firewall (`firewall`).
+   interface (`network`), and whether to enable OS firewall (`firewall`)
+   in the `group_vars/all` file.
 5. Execute the top level Ansible playbook:
    `ansible-playbook -i centos site.yml`
    (replace *centos* with *ubuntu* if you're using Ubuntu based nodes)
@@ -66,7 +70,7 @@ the following prerequisites configured and installed.
 
 #### Ansible
 
-Install Ansible using `pip` based on the
+Install Ansible using `pip` by following the
 [installation documentation](http://www.ansibleworks.com/docs/intro_installation.html#latest-releases-via-pip). Provided you are willing to install into your system
 Python, the steps are simple and involve just 2 commands:
 
@@ -83,16 +87,17 @@ into that.
 
 Now it's time for bootstrapping the Couchbase Server cluster.
 
-Open a terminal, change into the `linux` subdirectory of this project's
-top level directory and execute the top level Ansible playbook with a
-command like the following:
+Open a terminal, change into the *linux* subdirectory of this project's
+root directory and execute the top level Ansible playbook with commands like
+the following:
 
 ```
-ansible-playbook -i <hosts> site.yml
+cd linux
+ansible-playbook -i centos site.yml
 ```
 
-Replace *<hosts>* with `centos` or `ubuntu` depending on the operating system
-you're using for your cluster nodes.
+Replace *centos* with *ubuntu* if you'd prefer to use Ubuntu hosts for your
+cluster nodes.
 
 After some time to configure the OS, download and install Couchbase Server,
 and initialize the cluster, you'll soon be ready to try out your new cluster.
@@ -103,11 +108,11 @@ Once the Ansible playbooks complete without error, you can open a browser and
 access the primary Couchbase Server cluster node with a URL like:
 
 ```
-http://couchbase.local:8091
+http://node1.local:8091
 ```
 
-Substitute *couchbase.local* with the hostname of your
-Couchbase Server primary node.
+Substitute *couchbase.local* with the hostname of your Couchbase Server
+primary node.
 
 The administrator username and password as configured by this project
 are:

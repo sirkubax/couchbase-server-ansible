@@ -57,7 +57,7 @@ Begin from the top level directory of this project and use the following
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads), [Vagrant](http://downloads.vagrantup.com/), [vagrant-hosts](https://github.com/adrienthebo/vagrant-hosts), and [Ansible](http://www.ansibleworks.com/docs/intro_installation.html#latest-releases-via-pip).
 2. Edit `/etc/hosts` or use the included `bin/preinstall` script to add
-   the following entries:
+   the following entries to your development system's `/etc/hosts` file:
  * 10.1.42.10 node1.local node1
  * 10.1.42.20 node2.local node2
  * 10.1.42.30 node3.local node3
@@ -155,10 +155,12 @@ sudo pip install ansible
 
 Now it's time for bootstrapping the Couchbase Server cluster.
 
-Open a terminal, change into the `macosx` subdirectory of this project's
-top level directory and execute the following:
+Open a terminal, change into the *macosx* subdirectory of this project's
+root directory and execute the top level Ansible playbook with commands like
+the following:
 
 ```
+cd macosx
 vagrant up
 ```
 
