@@ -10,8 +10,10 @@
 # internal_ports: Memcached and client ports
 # node_data_ports: Distributed Erlang communication ports
 # server_ram: The per server RAM quota in megabytes
-# data_path: Path to Couchbase data files
-# index_path: Path to Couchbase index files
+# config_file: Full path to the config.dat file
+# data_path: Path to Couchbase Server data files
+# index_path: Path to Couchbase Server index files
+# log_path: Path to the Couchbase Server log files
 #############################################################################
 
 couchbase_server:
@@ -21,8 +23,10 @@ couchbase_server:
   node_data_ports: 21100:21299
   # NB: Change this to a reasonable server ram quota for your configuration
   server_ram: 3511
+  config_file: /opt/couchbase/var/lib/couchbase/config/config.dat
   data_path: /opt/couchbase/var/lib/couchbase/data
   index_path: /opt/couchbase/var/lib/couchbase/data
+  log_path: /opt/couchbase/var/lib/couchbase/logs
 
 #############################################################################
 # Operating system configuration

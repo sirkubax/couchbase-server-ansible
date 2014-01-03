@@ -2,3 +2,4 @@
 .tm_properties
 .vagrant
 labmachines
+cluster_uninstall.yml

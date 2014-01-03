@@ -13,11 +13,11 @@
 #  sha256: 0ce1f9858a3509362a4f7297089c1e18b31056fb3b95f2eea702c2891aa1bc1a
 
 ## Couchbase Server Enterprise Edition version 2.1.1
-centos:
-  version: 2.1.1
-  package: couchbase-server-enterprise_x86_64_2.1.1.rpm
-  url: http://packages.couchbase.com/releases/2.1.1/couchbase-server-enterprise_x86_64_2.1.1.rpm
-  sha256: 03f89821f602902f5d9e9c55b23281c02ca2e88d5bbcf3db45ec83de8146d036
+#centos:
+#  version: 2.1.1
+#  package: couchbase-server-enterprise_x86_64_2.1.1.rpm
+#  url: http://packages.couchbase.com/releases/2.1.1/couchbase-server-enterprise_x86_64_2.1.1.rpm
+#  sha256: 03f89821f602902f5d9e9c55b23281c02ca2e88d5bbcf3db45ec83de8146d036
 
 ## Couchbase Server Enterprise Edition version 2.1.0
 #centos:
