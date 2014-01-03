@@ -6,11 +6,14 @@
 #
 
 [centos]
-centos-0663-brian.local
-centos-0664-brian.local
-centos-0665-brian.local
+node1.local
+node2.local
+node3.local
+node4.local
 
 [cluster_nodes]
-centos-0663-brian.local node_role=primary
-centos-0664-brian.local node_role=additional
-centos-0665-brian.local node_role=additional
+node1.local node_role=primary
+node2.local node_role=additional
+node3.local node_role=additional
+node4.local node_role=additional
+
