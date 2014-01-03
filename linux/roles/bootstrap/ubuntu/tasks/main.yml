@@ -1,5 +1,5 @@
 ---
-# File: main.yml
+# File: linux/roles/bootstrap/ubuntu/tasks/main.yml
 # Main tasks for the Ubuntu features of the bootstrap role
 
 - name: Ubuntu PAM configuration

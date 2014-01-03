@@ -34,7 +34,7 @@ This project is comprised of 2 distinct sub-projects structured as follows:
    and installing Couchbase Server
  * create_bucket.yml: Ansible playbook for creating a Couchbase Server bucket
  * site.yml: Top level Ansible playbook for Linux nodes
- * ubuntu: Hosts inventory file for CentOS based clusters
+ * ubuntu: Hosts inventory file for Ubuntu based clusters
 * **macosx**: Ansible project and [documentation](https://github.com/couchbaselabs/couchbase-server-ansible/tree/master/macosx#couchbase-server-with-ansible) for Mac OS X with Vagrant
   * bin: Contains convenience script for Vagrant host preparation
   * group_vars: Global variables for the project
@@ -48,7 +48,7 @@ This project is comprised of 2 distinct sub-projects structured as follows:
     and installing Couchbase Server
   * create_bucket.yml: Ansible playbook for creating a Couchbase Server bucket
   * site.yml: Top level Ansible playbook for Linux nodes
-  * ubuntu: Hosts inventory file for CentOS based clusters
+  * ubuntu: Hosts inventory file for Ubuntu based clusters
   * Vagrantfile: The Vagrant configuration file
 
 ## Thank You

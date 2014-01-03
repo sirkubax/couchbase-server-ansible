@@ -1,5 +1,5 @@
 ---
-# File: main.yml
+# File: linux/roles/couchbase-server/ubuntu/tasks/main.yml
 # Main tasks for the Ubuntu features of the couchbase-server role
 
 # Install Couchbase Server
