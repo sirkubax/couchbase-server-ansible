@@ -22,7 +22,7 @@ for Mac OS X with Vagrant managed VirtualBox environments.
 
 This project is comprised of 2 distinct sub-projects structured as follows:
 
-* **linux**: Ansible project and documentation for Linux
+* **linux**: Ansible project and [documentation](https://github.com/couchbaselabs/couchbase-server-ansible/tree/master/linux#couchbase-server-with-ansible) for Linux
  * group_vars: Global variables for the project
  * library: The couchbase-server Ansible module
  * roles: The *bootstrap* role for operating system configuration and the
@@ -35,7 +35,7 @@ This project is comprised of 2 distinct sub-projects structured as follows:
  * create_bucket.yml: Ansible playbook for creating a Couchbase Server bucket
  * site.yml: Top level Ansible playbook for Linux nodes
  * ubuntu: Hosts inventory file for CentOS based clusters
-* **macosx**: Ansible project and documentation for Mac OS X with Vagrant
+* **macosx**: Ansible project and [documentation](https://github.com/couchbaselabs/couchbase-server-ansible/tree/master/macosx#couchbase-server-with-ansible) for Mac OS X with Vagrant
   * bin: Contains convenience script for Vagrant host preparation
   * group_vars: Global variables for the project
   * library: The couchbase-server Ansible module
