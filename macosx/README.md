@@ -117,9 +117,9 @@ with the notion of *providers* for different deployment targets like
 VirtualBox and *provisioners* like Ansible for handling the actual deployment
 and provisioning of the virtual machines.
 
-This guide uses Vagrant version 1.3.5 along with some supporting plugins to
-automate the creation of the VirtualBox machines which we will be using for
-the Couchbase Server nodes.
+This guide uses Vagrant along with a supporting plugin to automate the
+creation of the VirtualBox machines which we will be using for the 
+Couchbase Server nodes.
 
 The baseboxes for operating systems are fetched from the Opscode
 [Bento](https://github.com/opscode/bento) project.
@@ -196,6 +196,10 @@ cluster.
 
 ## Notes
 
+0. The project is confirmed to function with the following software versions:
+ * Ansible version 1.4.3 
+ * VirtualBox version 4.3.6
+ * Vagrant version 1.4.2
 1. The project uses CentOS 6.4 and Ubuntu 12.04 as these are the supported
    platforms which are listed on the Couchbase Server package downloads page
    (CentOS 6 and Ubuntu 12.04 to be specific)

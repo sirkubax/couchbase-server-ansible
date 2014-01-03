@@ -1,5 +1,5 @@
 ---
-# File: main.yml
+# File: macosx/roles/couchbase-server/ubuntu/tasks/main.yml
 # Main tasks for the Ubuntu features of the couchbase-server role
 
 # Install Couchbase Server
@@ -9,3 +9,4 @@
 
 - name: Install Couchbase Server
   command: dpkg -i /tmp/{{ ubuntu.package }}
+

@@ -1,5 +1,5 @@
 ---
-# File: main.yml
+# File: macosx/roles/bootstrap/common/tasks/main.yml
 # Main tasks for the common features of the bootstrap role
 
 # create operating system groups: Creates distribution specific user groups

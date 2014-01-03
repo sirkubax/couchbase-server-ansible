@@ -1,0 +1,12 @@
+# File: macosx/roles/couchbase-server/centos/defaults/main.yml
+# CentOS Couchbase Server defaults
+#
+# The default is to install the latest available Enterprise Edition
+
+# Couchbase Server Enterprise Edition version 2.2.0 on CentOS
+centos:
+  version: 2.2.0
+  package: couchbase-server-enterprise_2.2.0_x86_64.rpm
+  url: http://packages.couchbase.com/releases/2.2.0/couchbase-server-enterprise_2.2.0_x86_64.rpm
+  sha256: 0ce1f9858a3509362a4f7297089c1e18b31056fb3b95f2eea702c2891aa1bc1a
+

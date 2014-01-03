@@ -1,5 +1,5 @@
 ---
-# File: main.yml
+# File: macosx/roles/couchbase-server/centos/tasks/main.yml
 # Main tasks for the centos features of the couchbase-server role
 
 # Configure iptables, install Couchbase Server
@@ -15,3 +15,4 @@
 
 - name: Install Couchbase Server
   yum: name=/tmp/{{ centos.package }}
+

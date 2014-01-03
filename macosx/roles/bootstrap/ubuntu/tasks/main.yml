@@ -1,5 +1,5 @@
 ---
-# File: main.yml
+# File: macosx/roles/bootstrap/ubuntu/tasks/main.yml
 # Main tasks for the Ubuntu features of the bootstrap role
 
 - name: Ubuntu PAM configuration
@@ -7,3 +7,4 @@
   with_items:
     - /etc/pam.d/common-session
     - /etc/pam.d/common-session-noninteractive
+

@@ -121,7 +121,11 @@ cluster.
 
 ## Notes
 
-1. Review the different operating system tuning changes in the following
+0. The project is confirmed to function with the following software versions:
+ * Ansible version 1.4.3 
+1. The project uses CentOS 6.4 as the default since this is a supported
+   platform listed on the Couchbase Server package downloads page.
+2. Review the different operating system tuning changes in the following
    files to adjust or add your own:
    * `roles/bootstrap/common/templates/etc_rc.local.j2`
    * `roles/bootstrap/common/templates/iptables.j2`

@@ -1,6 +1,7 @@
 ---
-# File: main.yml
+# File: macosx/roles/bootstrap/centos/handlers/main.yml
 # Main handlers for the centos features of the bootstrap role
 
 - name: restart iptables
   service: name=iptables state=restarted
+
