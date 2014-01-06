@@ -1,4 +1,4 @@
-# File: ubuntu
+# File: macosx/ubuntu
 # Couchbase Server cluster node hosts configuration for Ubuntu nodes
 #
 # NB: Replace the hosts below with your preferred node hostnames and continue

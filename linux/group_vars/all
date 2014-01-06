@@ -22,7 +22,7 @@ couchbase_server:
   internal_ports: 11209:11211
   node_data_ports: 21100:21299
   # NB: Change this to a reasonable server ram quota for your configuration
-  server_ram: 3511
+  server_ram: 3072
   config_file: /opt/couchbase/var/lib/couchbase/config/config.dat
   data_path: /opt/couchbase/var/lib/couchbase/data
   index_path: /opt/couchbase/var/lib/couchbase/data

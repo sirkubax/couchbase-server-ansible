@@ -1,6 +1,6 @@
 ---
 # File: macosx/roles/bootstrap/ubuntu/tasks/main.yml
-# Main tasks for the Ubuntu features of the bootstrap role
+# Ubuntu tasks for the bootstrap role
 
 - name: Ubuntu PAM configuration
   lineinfile: line="session    required   pam_limits.so" dest={{ item }} regexp="session    required   pam_limits.so" insertafter="^# end of pam-auth-update config"

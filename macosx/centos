@@ -1,4 +1,4 @@
-# File: centos
+# File: macosx/centos
 # Couchbase Server cluster node hosts configuration for CentOS nodes
 #
 # NB: Replace the hosts below with your preferred node hostnames and continue

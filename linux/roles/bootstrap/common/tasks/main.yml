@@ -1,6 +1,6 @@
 ---
 # File: linux/roles/bootstrap/common/tasks/main.yml
-# Main tasks for the common features of the bootstrap role
+# Common tasks for the bootstrap role
 #
 # create operating system groups: Creates distribution specific user groups
 # update pam configuration: updates PAM user limits to raise the number of
@@ -23,3 +23,4 @@
 
 - name: Update PAM configuration
   copy: src=etc_security_limits.d_couchbase-server.conf dest=/etc/security/limits.d/couchbase-server.conf owner=root group=root mode=0644
+

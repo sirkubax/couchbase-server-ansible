@@ -34,9 +34,6 @@ couchbase_server:
 # index_storage: Index storage device details
 # network:       Name of network device for use with Couchbase Server
 # firewall:      Whether to use OS firewall (boolean)
-#
-# Tip: for optimal production use, consider using different physical devices
-# for data and index storage.
 #############################################################################
 
 data_storage:
@@ -57,3 +54,4 @@ network:
   iface: eth1
 
 firewall: True
+

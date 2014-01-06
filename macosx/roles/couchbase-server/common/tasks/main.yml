@@ -1,6 +1,6 @@
 ---
 # File: macosx/roles/couchbase-server/common/tasks/main.yml
-# Main tasks for the common features of the Couchbase Server role
+# Common tasks for the Couchbase Server role
 
 - name: start Couchbase Server
   service: name=couchbase-server state=started

@@ -1,4 +1,5 @@
-# File: macosx/roles/couchbase-server/ubuntu/vars/main.yml - Ubuntu variables
+# File: macosx/roles/couchbase-server/ubuntu/vars/main.yml
+# Ubuntu variables for Couchbase Server role
 #
 # A listing of available Couchbase Server Enterprise Edition packages
 # and their metadata for Ubuntu

@@ -1,5 +1,5 @@
 ---
-# File: site.yml
+# File: macosx/site.yml
 # Ansible playbook to install and initialize a Couchbase Server cluster
 
 - include: cluster_install.yml

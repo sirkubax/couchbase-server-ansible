@@ -1,5 +1,5 @@
 # File: macosx/roles/couchbase-server/ubuntu/defaults/main.yml
-# Ubuntu Couchbase Server defaults
+# Ubuntu defaults for the Couchbase Server role
 #
 # The default is to install the latest available Enterprise Edition
 
@@ -9,5 +9,4 @@ ubuntu:
   package: couchbase-server-enterprise_2.2.0_x86_64.deb
   url: http://packages.couchbase.com/releases/2.2.0/couchbase-server-enterprise_2.2.0_x86_64.deb
   sha256: 9b9f066cf45609a17ff71964feacbb3fd9d4c43208b2a823251fe6b1e6573fcd
-  
   
