@@ -15,7 +15,7 @@
   vars:
     primary_node: "{{hostvars[groups['primary'][0]]['inventory_hostname']}}"
     bucket:
-      name: relaxations
+      name: makura
       type: couchbase
       ramsize: 256
       port: 11222
