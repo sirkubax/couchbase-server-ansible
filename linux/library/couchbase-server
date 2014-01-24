@@ -133,7 +133,6 @@ def main():
     )
     global module
     module = AnsibleModule(argument_spec=arg_spec)
-
     command = module.params.get('command')
     admin_user = module.params.get('admin_user')
     admin_pass = module.params.get('admin_pass')
@@ -229,3 +228,4 @@ def main():
 # include magic from lib/ansible/module_common.py
 #<<INCLUDE_ANSIBLE_MODULE_COMMON>>
 main()
+
