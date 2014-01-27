@@ -1,6 +1,7 @@
 # File: macosx/roles/couchbase-server/centos/defaults/main.yml
 # CentOS Couchbase Server defaults
 #
+
 # The default is to install the latest available Enterprise Edition
 
 # Couchbase Server Enterprise Edition version 2.2.0 on CentOS
