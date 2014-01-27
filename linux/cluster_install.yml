@@ -3,7 +3,6 @@
 # Ansible playbook to configure operating system and install Couchbase Server
 
 - hosts: centos
-  #gather_facts: False
   sudo: True
   roles:
   - bootstrap/centos
@@ -12,7 +11,6 @@
   - couchbase-server/common
 
 - hosts: ubuntu
-  #gather_facts: False
   sudo: True
   roles:
   - bootstrap/ubuntu

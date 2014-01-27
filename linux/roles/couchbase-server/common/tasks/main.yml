@@ -2,6 +2,6 @@
 # File: linux/roles/couchbase-server/common/tasks/main.yml
 # Common tasks for the Couchbase Server role
 
-- name: start Couchbase Server
+- name: Ensure Couchbase Server service is started
   service: name=couchbase-server state=started
 
