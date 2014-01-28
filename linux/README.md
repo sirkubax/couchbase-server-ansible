@@ -138,7 +138,7 @@ tag support; here is a list of available tags by role:
 
 * *network* : Network hostname
 * *system_packages* : Install any required system packages
-* *tune_system* : Set disk scheduler specified in `linux/group_vars/all`
+* *system_tuning* : Set disk scheduler specified in `linux/group_vars/all`
   for the data and index volumes, disable Transparent Huge Pages, and
   other system tuning
 
@@ -161,7 +161,7 @@ and index volumes, disable Transparent Huge Pages, and perform other system
 tuning:
 
 ```
-ansible-playbook -i centos cluster_install.yml --tags "tune_system"
+ansible-playbook -i centos cluster_install.yml --tags "system_tuning"
 ```
 
 Download and install the version of Couchbase Server specified in either
@@ -176,7 +176,7 @@ perform the system tuning and installation tasks:
 
 ```
 ansible-playbook -i centos cluster_install.yml \
---tags "tune_system, installation"
+--tags "system_tuning, installation"
 ```
 
 ## Notes

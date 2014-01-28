@@ -7,5 +7,5 @@
   with_items:
     - /etc/pam.d/common-session
     - /etc/pam.d/common-session-noninteractive
-  tags: tune_system
+  tags: system_tuning
 

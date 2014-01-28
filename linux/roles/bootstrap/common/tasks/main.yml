@@ -15,7 +15,7 @@
 - name: Define local settings
   template: src=etc_rc.local.j2 dest=/etc/rc.local owner=root group=root mode=0755
   notify: source locals
-  tags: tune_system
+  tags: system_tuning
 
 - name: Mount data volume
   mount: name={{ data_storage.mountpoint }} src={{ data_storage.partition }} opts="noatime,barrier=0,errors=remount-ro" fstype=ext4 state=mounted
@@ -25,4 +25,4 @@
 
 - name: Update PAM configuration
   copy: src=etc_security_limits.d_couchbase-server.conf dest=/etc/security/limits.d/couchbase-server.conf owner=root group=root mode=0644
-  tags: tune_system
+  tags: system_tuning
