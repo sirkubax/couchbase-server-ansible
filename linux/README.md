@@ -179,6 +179,38 @@ ansible-playbook -i centos cluster_install.yml \
 --tags "system_tuning, installation"
 ```
 
+### Create Buckets
+
+A convenience playbook (`create_bucket.yml`) for bucket creation is included.
+
+Upon first execution without specifying variable arguments via the `ansible-playbook` extra vars ('-e') option, the playbook will generate a
+bucket with the following properties:
+
+* Bucket name: *makura*
+* Bucket type: *couchbase*
+* Bucket port: *11222*
+* Bucket RAM size: 256MB
+* Bucket replica number: 1
+
+If you'd like to create your own buckets, then use the `ansible-playbook`
+extra vars ('-e') option and specify values for the
+*b_name*, *b_type*, *b_port*, *b_ramsize*, and *b_replica* variables like so:
+
+```
+ansible-playbook -i centos create_bucket.yml \
+-e "b_name=danika b_type=couchbase b_port=11223 b_ramsize=256 b_replica=2"
+```
+
+or perhaps you'd like to make a memcached based bucket? No problem:
+
+```
+ansible-playbook -i centos create_bucket.yml \
+-e "b_name=breandon b_type=memcached b_port=11224 b_ramsize=512 b_replica=0"
+```
+
+More useful operations and playbooks are planned for future versions of
+this project as well.
+
 ## Notes
 
 0. The project is confirmed to function with the following software versions:

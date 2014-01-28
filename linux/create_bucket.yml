@@ -21,6 +21,7 @@
     b_port: 11222
     b_replica: 1
 
+# FIXME: need to find a way to make this work with `-e` vars too
 #  vars_prompt:
 #    - name: "b_name"
 #      prompt: "Bucket name"
