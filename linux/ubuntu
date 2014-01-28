@@ -3,7 +3,7 @@
 #
 # NB: Replace the hosts below with your actual node hostnames and continue
 #     the 'node_role' pattern for additional nodes past 'fourth_node'
-#
+#     Do not modify the labels (text appearing between []), however
 
 [ubuntu]
 node1.local

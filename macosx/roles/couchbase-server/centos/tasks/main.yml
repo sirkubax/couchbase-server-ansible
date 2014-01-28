@@ -9,10 +9,13 @@
   notify:
   - lokkit
   when: firewall is defined
+  tags: network
 
 - name: Download Couchbase Server
   get_url: url={{ centos.url }} dest=/tmp/{{ centos.package }} sha256sum={{ centos.sha256 }}
+  tags: installation
 
 - name: Install Couchbase Server
   yum: name=/tmp/{{ centos.package }}
+  tags: installation
 

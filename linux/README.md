@@ -53,7 +53,8 @@ Server, and initialize the nodes into a ready to use cluster.
    physical disk information (`data_storage`, `index_storage`), network
    interface (`network`), and whether to enable OS firewall (`firewall`)
    in the `group_vars/all` file.
-5. Execute the top level Ansible playbook:
+5. Execute the top level Ansible playbook to fully configure system,
+   install Couchbase Server, and create a cluster:
    `ansible-playbook -i centos site.yml`
    (replace *centos* with *ubuntu* if you're using Ubuntu based nodes)
 
@@ -123,6 +124,60 @@ are:
 Once you've logged in and verified that the cluster is available, you're now
 ready to create buckets and begin using your new Couchbase Server development
 cluster.
+
+### Other Operations
+
+While the basic instructions for getting started do a fair bit of work, you
+can also run the `cluster_init.yml` playbook to only perform the cluster
+initialization.
+
+You can also run a subset of the tasks independently through Ansible's 
+tag support; here is a list of available tags by role:
+
+**bootstrap**
+
+* *network* : Network hostname
+* *system_packages* : Install any required system packages
+* *tune_system* : Set disk scheduler specified in `linux/group_vars/all`
+  for the data and index volumes, disable Transparent Huge Pages, and
+  other system tuning
+
+**couchbase-server**
+
+* *installation* : Download and install the Couchbase Server package
+* *network* : Couchbase Server specific firewall settings
+* *service* : Ensure that the Couchbase Server service is started
+
+Here are some examples of tag usage:
+
+Install required system packages, such as *libselinux-python* on CentOS:
+
+```
+ansible-playbook -i centos cluster_install.yml --tags "system_packages"
+```
+
+Set the disk scheduler specified in `linux/group_vars/all` for the data
+and index volumes, disable Transparent Huge Pages, and perform other system
+tuning:
+
+```
+ansible-playbook -i centos cluster_install.yml --tags "tune_system"
+```
+
+Download and install the version of Couchbase Server specified in either
+`defaults/main.yml` or `vars/main.yml` for the Linux distribution in use:
+
+```
+ansible-playbook -i centos cluster_install.yml --tags "installation"
+```
+
+You can also combine multiple tags, as in the following example, which will
+perform the system tuning and installation tasks:
+
+```
+ansible-playbook -i centos cluster_install.yml \
+--tags "tune_system, installation"
+```
 
 ## Notes
 

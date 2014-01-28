@@ -6,7 +6,9 @@
 
 - name: Download Couchbase Server
   get_url: url={{ ubuntu.url }} dest=/tmp/{{ ubuntu.package }} sha256sum={{ ubuntu.sha256 }}
+  tags: installation
 
 - name: Install Couchbase Server
   command: dpkg -i /tmp/{{ ubuntu.package }}
+  tags: installation
 

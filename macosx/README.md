@@ -201,7 +201,7 @@ cluster.
 0. The project is confirmed to function with the following software versions:
  * Ansible version 1.4.3 
  * VirtualBox version 4.3.6
- * Vagrant version 1.4.2
+ * Vagrant version 1.4.3
 1. The project uses CentOS 6.4 and Ubuntu 12.04 as these are the supported
    platforms which are listed on the Couchbase Server package downloads page
    (CentOS 6 and Ubuntu 12.04 to be specific)

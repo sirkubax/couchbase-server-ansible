@@ -4,4 +4,4 @@
 
 - name: Ensure Couchbase Server service is started
   service: name=couchbase-server state=started
-
+  tags: service

@@ -4,4 +4,5 @@
 
 - name: Install libselinux-python
   yum: name=libselinux-python state=latest
+  tags: system_packages
 
