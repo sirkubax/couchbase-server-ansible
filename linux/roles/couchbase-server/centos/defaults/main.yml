@@ -3,10 +3,10 @@
 #
 # The default is to install the latest available Enterprise Edition
 
-# Couchbase Server Enterprise Edition version 2.2.0 on CentOS
+# Couchbase Server Enterprise Edition version 2.5.0 on CentOS
 centos:
-  version: 2.2.0
-  package: couchbase-server-enterprise_2.2.0_x86_64.rpm
-  url: http://packages.couchbase.com/releases/2.2.0/couchbase-server-enterprise_2.2.0_x86_64.rpm
-  sha256: 0ce1f9858a3509362a4f7297089c1e18b31056fb3b95f2eea702c2891aa1bc1a
+  version: 2.5.0
+  package: "couchbase-server-enterprise_2.5.0_x86_64.rpm"
+  url: "http://packages.couchbase.com/releases/2.5.0/couchbase-server-enterprise_2.5.0_x86_64.rpm"
+  sha256: b131f3670d99177cd83959e1283ff213f3f470fbbfd6b84cd24826e4a8287298
 

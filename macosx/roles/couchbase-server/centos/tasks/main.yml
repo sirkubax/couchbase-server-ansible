@@ -19,3 +19,6 @@
   yum: name=/tmp/{{ centos.package }}
   tags: installation
 
+- name: Clean up
+  file: "path=/tmp/{{ centos.package }} state=absent"
+  tags: installation

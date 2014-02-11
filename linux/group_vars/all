@@ -25,6 +25,7 @@ couchbase_server:
   server_ram: 3072
   config_file: /opt/couchbase/var/lib/couchbase/config/config.dat
   data_path: /opt/couchbase/var/lib/couchbase/data
+  home_path: /opt/couchbase
   index_path: /opt/couchbase/var/lib/couchbase/data
   log_path: /opt/couchbase/var/lib/couchbase/logs
 
