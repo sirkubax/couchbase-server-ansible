@@ -1,0 +1,64 @@
+---
+# File: linux/cluster_upgrade.yml
+# Ansible playbook to upgrade Couchbase Server cluster using 
+# the Online Upgrade method
+
+- hosts: cluster_nodes
+  gather_facts: False
+  sudo: True
+  tasks:
+  - name: Create cluster grouping
+    group_by: key={{ node_role }}
+
+- hosts: additional
+  gather_facts: False
+  serial: 1
+  sudo: True
+
+  vars:
+    primary_node: "{{hostvars[groups['primary'][0]]['inventory_hostname']}}"
+
+  vars_files:
+    - roles/couchbase-server/centos/defaults/main.yml
+
+  tasks:
+  - name: Download Couchbase Server software
+    get_url: "url={{ upgrade_centos.url }} dest=/tmp/{{ upgrade_centos.package }} sha256sum={{ upgrade_centos.sha256 }}"
+    tags: upgrade
+
+  - name: Remove additional node and rebalance
+    couchbase-server: "command=rebalance-remove admin_connection={{ primary_node }}:8091 cluster_node={{ primary_node }} node_remove={{ inventory_hostname }}"
+
+  - name: Upgrade Couchbase Server software
+    yum: "name=/tmp/{{ upgrade_centos.package }} state=present"
+    tags: upgrade
+
+  - name: Add additional node and rebalance
+    couchbase-server: "command=rebalance-add admin_connection={{ primary_node }}:8091 cluster_node={{ primary_node }} node_add={{ inventory_hostname }}"
+
+- hosts: primary
+  gather_facts: False
+  serial: 1
+  sudo: True
+
+  vars:
+    backup_node: "{{hostvars[groups['additional'][0]]['inventory_hostname']}}"
+
+  vars_files:
+    - roles/couchbase-server/centos/defaults/main.yml
+
+  tasks:
+  - name: Download Couchbase Server software
+    get_url: "url={{ upgrade_centos.url }} dest=/tmp/{{ upgrade_centos.package }} sha256sum={{ upgrade_centos.sha256 }}"
+    tags: upgrade
+
+  - name: Remove primary node and rebalance
+    couchbase-server: "command=rebalance-remove admin_connection={{ backup_node }}:8091 cluster_node={{ backup_node }} node_remove={{ inventory_hostname }}"
+
+  - name: Upgrade Couchbase Server software
+    yum: "name=/tmp/{{ upgrade_centos.package }} state=present"
+    tags: upgrade
+
+  - name: Add primary node and rebalance
+    couchbase-server: "command=rebalance-add admin_connection={{ backup_node }}:8091 cluster_node={{ backup_node }} node_add={{ inventory_hostname }}"
+

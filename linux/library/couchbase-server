@@ -18,7 +18,7 @@ options:
     required: false
     default: null
     aliases: []
-    choices: ['cluster-init', 'create-bucket', 'rebalance', 'server-info', 'server-add', 'server-list']
+    choices: ['cluster-init', 'create-bucket', 'rebalance', 'rebalance-add', 'rebalance-remove', 'server-info', 'server-add', 'server-list']
   admin_connection:
     description:
       - Cluster node address and port
@@ -94,6 +94,17 @@ options:
       - New bucket replica number
     default: null
     aliases: []
+  node_add:
+    description:
+      - Node to add and rebalance
+    default: null
+    aliases: []
+  node_remove:
+    description:
+      - Node to remove and rebalance
+    default: null
+    aliases: []
+
 '''
 
 EXAMPLES = '''
@@ -125,11 +136,13 @@ def main():
         cluster_ram_size=dict(default=False, required=False),
         stats_port=dict(default=11210, required=False),
         stats_level=dict(default='all', required=False),
-        bucket_name=dict(default="potrzebie", required=False),
+        bucket_name=dict(default="makura", required=False),
         bucket_type=dict(defalt="couchbase", required=False),
         bucket_port=dict(default="11222", required=False),
         bucket_ramsize=dict(default="256", required=False),
-        bucket_replica=dict(default="1", required=False)
+        bucket_replica=dict(default="1", required=False),
+        node_add=dict(default=False, required=False),
+        node_remove=dict(default=False, required=False)
     )
     global module
     module = AnsibleModule(argument_spec=arg_spec)
@@ -148,6 +161,8 @@ def main():
     bucket_port = module.params.get('bucket_port')
     bucket_ramsize = module.params.get('bucket_ramsize')
     bucket_replica = module.params.get('bucket_replica')
+    node_add = module.params.get('node_add')
+    node_remove = module.params.get('node_remove')
     cb_cli_bin = '/opt/couchbase/bin/couchbase-cli'
     rc = 0
     err = ''
@@ -168,7 +183,29 @@ def main():
     # rebalance command
     elif command == 'rebalance':
 
-        command_line = '%s rebalance -c %s --user=%s --password=%s' % (cb_cli_bin, admin_connection, admin_user, admin_pass)
+        command_line = '%s rebalance -c %s --user=%s --password=%s' % (cb_cli_bin, admin_connection, admin_user, admin_pass,)
+
+        rc, out, err = module.run_command(command_line)
+        if rc == 0:
+            module.exit_json(changed=True, msg=out)
+        else:
+            module.fail_json(msg=err)
+
+    # rebalance-add command
+    elif command == 'rebalance-add':
+
+        command_line = '%s rebalance -c %s --user=%s --password=%s --server-add=%s' % (cb_cli_bin, admin_connection, admin_user, admin_pass, node_add)
+
+        rc, out, err = module.run_command(command_line)
+        if rc == 0:
+            module.exit_json(changed=True, msg=out)
+        else:
+            module.fail_json(msg=err)
+
+    # rebalance-remove command
+    elif command == 'rebalance-remove':
+
+        command_line = '%s rebalance -c %s --user=%s --password=%s --server-remove=%s' % (cb_cli_bin, admin_connection, admin_user, admin_pass, node_remove)
 
         rc, out, err = module.run_command(command_line)
         if rc == 0:

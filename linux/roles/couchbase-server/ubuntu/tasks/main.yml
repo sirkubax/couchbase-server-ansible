@@ -12,3 +12,6 @@
   command: dpkg -i /tmp/{{ ubuntu.package }}
   tags: installation
 
+- name: Clean up
+  file: "path=/tmp/{{ ubuntu.package }} state=absent"
+  tags: installation
