@@ -78,6 +78,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node3_config.vm.provision :ansible do |ansible|
       ansible.inventory_path = CLUSTER_HOSTS
       ansible.playbook = "site.yml"
+      ansible.limit = 'all'
     end
   end
 end
