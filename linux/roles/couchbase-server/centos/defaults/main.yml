@@ -5,15 +5,15 @@
 
 # Couchbase Server Enterprise Edition version 2.5.0 on CentOS
 centos:
-  version: 2.5.0
-  package: "couchbase-server-enterprise_2.5.0_x86_64.rpm"
-  url: "http://packages.couchbase.com/releases/2.5.0/couchbase-server-enterprise_2.5.0_x86_64.rpm"
-  sha256: b131f3670d99177cd83959e1283ff213f3f470fbbfd6b84cd24826e4a8287298
+  version: 2.5.1
+  package: "couchbase-server-enterprise_2.5.1_x86_64.rpm"
+  url: "http://packages.couchbase.com/releases/2.5.1/couchbase-server-enterprise_2.5.1_x86_64.rpm"
+  sha256: 2310a31d177f9396e8c436a991d952b2b57a3b41f74658fa5100b19a1d7ac875
 
 
 # Couchbase Server Enterprise Edition version 2.5.0 on CentOS
 upgrade_centos:
-  version: 2.5.0
-  package: "couchbase-server-enterprise_2.5.0_x86_64.rpm"
-  url: "http://packages.couchbase.com/releases/2.5.0/couchbase-server-enterprise_2.5.0_x86_64.rpm"
-  sha256: b131f3670d99177cd83959e1283ff213f3f470fbbfd6b84cd24826e4a8287298
+  version: 2.5.1
+  package: "couchbase-server-enterprise_2.5.1_x86_64.rpm"
+  url: "http://packages.couchbase.com/releases/2.5.1/couchbase-server-enterprise_2.5.1_x86_64.rpm"
+  sha256: 2310a31d177f9396e8c436a991d952b2b57a3b41f74658fa5100b19a1d7ac875
