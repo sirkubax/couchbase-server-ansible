@@ -4,6 +4,13 @@
 # A listing of available Couchbase Server Enterprise Edition packages
 # and their metadata for Ubuntu
 
+# Couchbase Server Enterprise Edition version 2.5.0 on Ubuntu
+#ubuntu:
+#  version: 2.5.0
+#  package: couchbase-server-enterprise_2.5.0_x86_64.deb
+#  url: http://packages.couchbase.com/releases/2.5.0/couchbase-server-enterprise_2.5.0_x86_64.deb
+#  sha256: b5e04a3832657c7fb6c6e2c499e2c1ef6b82ca57f470952abcf03332857bedde
+
 # Couchbase Server Enterprise Edition version 2.2.0 on Ubuntu
 #ubuntu:
 #  version: 2.2.0

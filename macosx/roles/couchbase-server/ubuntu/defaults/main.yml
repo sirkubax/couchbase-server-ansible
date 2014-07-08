@@ -4,10 +4,10 @@
 
 # The default is to install the latest available Enterprise Edition
 
-# Couchbase Server Enterprise Edition version 2.2.0 on Ubuntu
+# Couchbase Server Enterprise Edition version 2.5.1 on Ubuntu
 ubuntu:
-  version: 2.5.0
-  package: couchbase-server-enterprise_2.5.0_x86_64.deb
-  url: http://packages.couchbase.com/releases/2.5.0/couchbase-server-enterprise_2.5.0_x86_64.deb
-  sha256: b5e04a3832657c7fb6c6e2c499e2c1ef6b82ca57f470952abcf03332857bedde
+  version: 2.5.1
+  package: couchbase-server-enterprise_2.5.1_x86_64.deb
+  url: http://packages.couchbase.com/releases/2.5.1/couchbase-server-enterprise_2.5.1_x86_64.deb
+  sha256: 26c8c990addbd56024fbc5c8e841962b985034f5b7c0e936eb9af94674e5f12a
 
