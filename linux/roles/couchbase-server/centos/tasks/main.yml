@@ -22,3 +22,7 @@
 - name: Clean up
   file: "path=/tmp/{{ centos.package }} state=absent"
   tags: installation
+
+- name: Start Couchbase Server service
+  service: name=couchbase-server state=started
+  tags: service
