@@ -1,6 +1,14 @@
 # Couchbase Server with Ansible
 
 
+## 301 MOVED PERMANENTLY
+
+PLEASE NOTE: All of the current work for Couchbase Server with Ansible has
+moved to this repository:
+
+https://github.com/couchbaselabs/ansible-couchbase-server
+
+
                .CCCCC                       CCCCC.
               .CCCCCC                       CCCCCC.
               .CCCCCC                       CCCCCC.
